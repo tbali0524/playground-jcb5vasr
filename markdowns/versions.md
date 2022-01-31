@@ -8,7 +8,7 @@ But we can also check them easily directly. By copying the script below to the C
 
 ## Bash script
 
-```sh
+```sh runnable
 # ===== run from Bash
 echo "=== BASH ===" >&2
 bash --version  | head -1 >&2
@@ -74,7 +74,7 @@ echo "=== EXTRA: FORTRAN ===" >&2
 gfortran --version |head -1 >&2
 ```
 
-## Sample output
+## Sample output (on CG)
 
 (as of February 2022)
 

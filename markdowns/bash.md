@@ -4,6 +4,9 @@ We can call different interpreters with a one-liner solution passed as a command
 
 Unfortunatelly, we need to escape any dollar signs `$`, double quotes `"` and backslashes `\` in our source code (by adding a backslash `\` before them). This hurts especially in `Perl` and `PHP`, where all variable names start with a `$` sign... At least, in some languages single quotes `'` can be used instead of double quotes `"` (although in `PHP` with slightly different meaning).
 
+_Note: All the examples provided would try to read the test cases as input. That would not work on `Tech.io`, therefore these coding examples are not runnable here. You can try them out in the CG IDE for the [Rubik puzzle](https://www.codingame.com/training/medium/rubik%C2%AE)._
+
+
 ## Base solution
 
 My base solution for the sample puzzle is 34 characters long in Bash.
