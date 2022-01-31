@@ -139,6 +139,6 @@ v14.16.1
 GNU Fortran (Debian 10.2.1-6) 10.2.1 20210110
 ```
 
-## That's all folks!
+## That's all folks
 
 PS: Check out my other playground on `Tech.io`: [A Babel of Languages on CodinGame](https://www.codingame.com/playgrounds/56997/a-babel-of-languages-on-codingame/intro)

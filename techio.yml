@@ -1,10 +1,10 @@
-title:  Swapping languages on CodinGame (aka: System calls)
+title:  Swapping languages on CodinGame (a.k.a. system() calls)
 plan:
 - title: Intro
   statement: markdowns/intro.md
 - title: Calling an interpreter from Bash
   statement: markdowns/bash.md
-- title: Intro
+- title: Calling an interpreter from other languages
   statement: markdowns/systemcalls.md
 - title: Calling a compiler from Bash
   statement: markdowns/compilers.md

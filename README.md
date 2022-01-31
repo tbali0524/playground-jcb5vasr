@@ -1,3 +1,3 @@
-# Swapping languages on CodinGame (aka: System calls)
+# Swapping languages on CodinGame (a.k.a. system() calls)
 
-Tech.io playground
+Tech.io playground by TBali
