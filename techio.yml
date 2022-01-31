@@ -1,4 +1,12 @@
-title: Custom Template
+title:  Swapping languages on CodinGame (aka: System calls)
 plan:
-- title: Welcome
-  statement: markdowns/welcome.md
+- title: Intro
+  statement: markdowns/intro.md
+- title: Calling an interpreter from Bash
+  statement: markdowns/bash.md
+- title: Intro
+  statement: markdowns/systemcalls.md
+- title: Calling a compiler from Bash
+  statement: markdowns/compilers.md
+- title: Checking the compiler / runtime versions
+  statement: markdowns/versions.md
