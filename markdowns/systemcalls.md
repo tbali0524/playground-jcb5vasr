@@ -1,31 +1,9 @@
 # Calling an interpreter from other languages
 
-In most (if not all) languages there is a built-in facility or function which allows to execute an external program directly from our code. It works by sending a comand line (with any arguments) to the operating system - which is, in case of CG a Linux. That means we can do anything as if we were in a `bash` script.
-Let's see some examples by calling  our sample solution in Python from different languages:
+In most (if not all) languages there is a built-in function or language construct which allows to execute an external program directly from our code. It works by sending a comand line (with any arguments) to the operating system - which is in case of the CG runtime Linux. That means we can do anything as if we were in a `bash` script.
 
-## C
-
-```c
-// ===== to Python from C
-//   length = 19 + 12 (if python) + base + #quotes = 80 chars
-//   double quotes must be escaped
-//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
-main(){system("python3 -c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"");}
-```
-
-This used to work, but currently breaks any puzzle solution on CG, because the C debugger sends an extra message to the output, ruining the expected puzzle output.
-    * _give me a PM or PR if you know how to cure it..._
-
-As the command line is given as a string, we need to escape the double quotes `"` in the embedded source code.
-
-## C++
-
-```c++
-// ===== to Python from C++
-//   see C section, however below line must be added (+20 chars)
-//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
-#include<stdlib.h>
-```
+Let's see some examples by calling our sample solution in Python from different languages.
+As the command line is given as a string, usually we need to escape the double quotes `"` in the embedded source code.
 
 ## C\#
 
@@ -43,17 +21,6 @@ using System.Diagnostics;class S{static void Main(){Process.Start(new ProcessSta
 # ===== to Python from Lua
 #   length = 12 + 12 (if python) + base = 75 chars
 os.execute("python3 -c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"")
-```
-
-## Objective-C
-
-```c
-// ===== to Python from Objective-C
-//   length = 72 + 12 (if python) + base + #quotes = 133 chars
-//   double quotes must be escaped
-//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
-#include <Foundation/Foundation.h>
-int main(){system([@"python3 -c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"" UTF8String]);}
 ```
 
 ## Perl
@@ -94,9 +61,32 @@ system('python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"')
 
 ## Under construction (not working yet)
 
-Below are code for some other languages, however they are currently not working.
+Below are system calling code for some other languages, however they are currently not working.
 
-_Give me a PM or PR if you know how to make them work..._
+* _Give me a PM or PR if you know how to make them work..._
+
+## C
+
+```c
+// ===== to Python from C
+//   length = 19 + 12 (if python) + base + #quotes = 80 chars
+//   double quotes must be escaped
+//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
+main(){system("python3 -c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"");}
+```
+
+This used to work before the latest CG update, but currently breaks any puzzle solution on CG, because the C debugger sends an extra message to the output, ruining the expected puzzle output.
+
+## C++
+
+```c++
+// ===== to Python from C++
+//   see C section, however below line must be added (+20 chars)
+//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
+#include<stdlib.h>
+```
+
+The C solution would work (if it weren't broken) also in C++ but we need to add an include file.
 
 ## D
 
@@ -135,6 +125,17 @@ class Solution {
 }
 ```
 
+## Objective-C
+
+```c
+// ===== to Python from Objective-C
+//   length = 72 + 12 (if python) + base + #quotes = 133 chars
+//   double quotes must be escaped
+//   currently BROKEN because of an extra GDB output: [Detaching after vfork from child process X]
+#include <Foundation/Foundation.h>
+int main(){system([@"python3 -c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"" UTF8String]);}
+```
+
 ## Pascal
 
 ```pascal
@@ -145,7 +146,7 @@ program A;
 uses Process;
 var s : ansistring;
 begin
-RunCommand('python',['-c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"'],s);
+    RunCommand('python',['-c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"'],s);
 end.
 ```
 

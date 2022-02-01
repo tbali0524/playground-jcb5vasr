@@ -1,14 +1,15 @@
 # Checking the compiler / runtime versions
 
-The [FAQ](https://www.codingame.com/playgrounds/40701/help-center/languages-versions) lists all the language / compiler / interpeter versions provided by CG.
-But we can also check them easily directly. By copying the script below to the CG IDE for any puzzle (with `Bash` as selected language) it will print out the version numbers to the error log. This is not particularly useful, I put it here only because the script is a nice summary of where all the compilers are located (if not in the PATH) on the CG runtime image.
+The [CG FAQ](https://www.codingame.com/playgrounds/40701/help-center/languages-versions) lists all the language / compiler / interpeter versions provided by CG.
+But we can also check them easily directly. By copying the script below to the CG IDE for any puzzle (with `Bash` as selected language) it will print out the version numbers to the error log. This is not particularly useful, I put it here only because the script is a nice summary of where all the compilers are located (if not in the `$PATH`) on the CG virtual machine.
 
+* CG and `Tech.io` are using different virtual machines. So below script works only in the CG IDE and not runnable here.
 * For a few languages I still don't have the proper command line to run on CG. So `C#`, `Clojure`, `F#`, `Groovy`, `Kotlin` and `VB.NET` are currently missing.
     * _give me a PM or PR if you know it..._
 
 ## Bash script
 
-```bash runnable
+```bash
 # ===== run from Bash
 echo "=== BASH ===" >&2
 bash --version  | head -1 >&2
@@ -76,7 +77,7 @@ gfortran --version |head -1 >&2
 
 ## Sample output (on CG)
 
-(as of February 2022)
+(as of _February 2022_)
 
 ```txt
 === BASH ===
@@ -140,5 +141,7 @@ GNU Fortran (Debian 10.2.1-6) 10.2.1 20210110
 ```
 
 ## That's all folks
+
+Thanks for your time!
 
 PS: Check out my other playground on `Tech.io`: [A Babel of Languages on CodinGame](https://www.codingame.com/playgrounds/56997/a-babel-of-languages-on-codingame/intro)

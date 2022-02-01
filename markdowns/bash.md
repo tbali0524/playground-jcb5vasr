@@ -50,7 +50,7 @@ python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"
 
 My Python solution is 47 chars. Calling the interpreter adds 12 chars. Here I did not need any escaping.
 
-_Note: using `python` instead of `python3` saves 1 char, but it invokes Python 2.x, so your code might not be backwards compatible._
+_Note: using `python` instead of `python3` saves 1 char, but it still invokes Python 2.x on CG, so your code might not be backwards compatible._
 
 ## Ruby
 
@@ -61,7 +61,8 @@ _Note: using `python` instead of `python3` saves 1 char, but it invokes Python 2
 /usr/local/bin/ruby -e"n=gets.to_i;puts n>1?6*n*(n-2)+8:1"
 ```
 
-My Ruby solution is 34 chars. Currently `ruby` seems to be not in the path on CG so we need to add full path which costs 24 chars for invoking the interpreter.
+My Ruby solution is 34 chars.
+Currently `ruby` seems to be not in the `$PATH` on CG, so we need to add full path which costs 24 chars for invoking the interpreter.
 
 ## Coming next
 

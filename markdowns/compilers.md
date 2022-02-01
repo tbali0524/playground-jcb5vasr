@@ -2,10 +2,10 @@
 
 We can also use a `bash` script to generate our source code, save it to a file, compile it, and run the compiled program.
 
+* The same approach works also for interpreters, although it might be simpler to send the input source directly to the interpreter as a command line parameter (as we did earlier) instead of saving it to an interim file.
 * For a few languages I still don't know the proper command line for CG. So `C#`, `Clojure`, `F#`, `Groovy`, `Java`, `Kotlin`, `Objective-C` and `VB.NET` are currently not working,
     * _give me a PM or PR if you know it..._
-* The same approach works also for interpreters, although it might be simpler to send the input source directly to the interpreter as a command line parameter (as we did earlier) instead of saving it to an interim file.
-* Notes: the sample code on this page is not minified, and syntax highlighting is not working for the embedded language.
+* Notes: the sample code on this page is not minified. Syntax highlighting is not working for the embedded language.
 
 ## C
 
@@ -18,7 +18,7 @@ gcc -o sol sol.c
 ./sol
 ```
 
-This is still our sample puzzle solution, now in C. I will exclude it for the other languages below, focusing on the 'running the compiler' part only.
+This is still our sample puzzle solution, now in C. I will exclude the embedded code in the remaining examples, focusing on the 'running the compiler' part only.
 
 ## C\#
 
@@ -86,6 +86,8 @@ cat > sol.fs << EOF
 EOF
 # ???
 ```
+
+I miss the proper command line here.
 
 ## Go
 
@@ -260,9 +262,12 @@ gfortran sol.f90 -o sol
 ./sol
 ```
 
+While `Fortran` is officially not supported on CG, the compiler is still there on the image...
+
 ## +2 extra: Bash
 
-It does not have much sense, but for the sake of completeness: Another `Bash` script can also be created and executed from the source script.
+It does not have any sense, but for the sake of completeness:
+Another `bash` script can also be created and executed from the source script.
 
 ```sh
 # ===== to Bash from Bash
@@ -272,3 +277,7 @@ EOF
 chmod +x sol.sh
 ./sol.sh
 ```
+
+## Coming next
+
+Let's wrap up this playground by invoking all the compilers / runtimes to get their version numbers.
