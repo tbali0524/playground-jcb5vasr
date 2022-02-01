@@ -2,7 +2,7 @@
 
 We can also use a `bash` script to generate our source code, save it to a file, compile it, and run the compiled program.
 
-* The same approach works also for interpreters, although it might be simpler to send the input source directly to the interpreter as a command line parameter (as we did earlier) instead of saving it to an interim file.
+* The same approach works also for interpreters, although it might be simpler to send the input source directly to the interpreter as a command line parameter (as we did earlier), instead of saving it to an interim file.
 * For a few languages I still don't know the proper command line for CG. So `C#`, `Clojure`, `F#`, `Groovy`, `Java`, `Kotlin`, `Objective-C` and `VB.NET` are currently not working,
     * _give me a PM or PR if you know it..._
 * Notes: the sample code on this page is not minified. Syntax highlighting is not working for the embedded language.
@@ -86,8 +86,6 @@ cat > sol.fs << EOF
 EOF
 # ???
 ```
-
-I miss the proper command line here.
 
 ## Go
 
@@ -249,6 +247,7 @@ EOF
 cat > sol.vb << EOF
 // ...
 EOF
+# ???
 ```
 
 ## +1 bonus: FORTRAN
@@ -262,11 +261,12 @@ gfortran sol.f90 -o sol
 ./sol
 ```
 
-While `Fortran` is officially not supported on CG, the compiler is still there on the image...
+While `Fortran` is officially not supported on CG, the compiler is still available on the virtual machine...
 
 ## +2 extra: Bash
 
-It does not have any sense, but for the sake of completeness:
+It does not make any sense, but for the sake of completeness:
+
 Another `bash` script can also be created and executed from the source script.
 
 ```sh

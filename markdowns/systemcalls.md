@@ -1,6 +1,6 @@
 # Calling an interpreter from other languages
 
-In most (if not all) languages there is a built-in function or language construct which allows to execute an external program directly from our code. It works by sending a comand line (with any arguments) to the operating system - which is in case of the CG runtime Linux. That means we can do anything as if we were in a `bash` script.
+In most (if not all) languages there is a built-in function or language construct which allows to execute an external program directly from our code. It works by sending a command line (with any arguments) to the operating system - which is in case of the CG runtime Linux. That means we can do anything as if we were in a `bash` script.
 
 Let's see some examples by calling our sample solution in Python from different languages.
 As the command line is given as a string, usually we need to escape the double quotes `"` in the embedded source code.
