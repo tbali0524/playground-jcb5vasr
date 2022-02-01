@@ -16,33 +16,33 @@ bash --version  | head -1 >&2
 echo "=== C ===" >&2
 gcc --version | head -1 >&2
 echo "=== C# ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 # /opt/coderunner/dotnet/bin/dotnet --version | head -1 >&2
 echo "=== C++ ===" >&2
 g++ --version | head -1 >&2
 echo "=== CLOJURE ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 #
 echo "=== D ===" >&2
 /opt/coderunner/dlang/dmd/linux/bin64/dmd --version | head -1 >&2
 echo "=== DART ===" >&2
 /usr/local/dart-sdk/bin/dart --version | head -1 >&2
 echo "=== F# ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 #
 echo "=== GO ===" >&2
 /opt/coderunner/go/bin/go version | head -1 >&2
 echo "=== GROOVY ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 # /opt/coderunner/groovy/bin/groovy --help >&2
 echo "=== HASKELL ===" >&2
 ghc --version >&2
 echo "=== JAVA ===" >&2
 java --version | head -1 >&2
 echo "=== JAVASCRIPT ===" >&2
-echo "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
+printf "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== KOTLIN ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 # /opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
 echo "=== LUA ===" >&2
 lua -v >&2
@@ -67,9 +67,9 @@ echo "=== SCALA ===" >&2
 echo "=== SWIFT ===" >&2
 /opt/coderunner/swift/usr/bin/swift --version | head -1 >&2
 echo "=== TYPESCRIPT ===" >&2
-echo "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
+printf "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== VB.NET ===" >&2
-echo "****************  NOT WORKING! ****************" >&2
+echo "******** (NOT WORKING!)" >&2
 #
 echo "=== EXTRA: FORTRAN ===" >&2
 gfortran --version |head -1 >&2
@@ -85,30 +85,29 @@ GNU bash, version 5.1.4(1)-release (x86_64-pc-linux-gnu)
 === C ===
 gcc (Debian 10.2.1-6) 10.2.1 20210110
 === C# ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === C++ ===
 g++ (Debian 10.2.1-6) 10.2.1 20210110
 === CLOJURE ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === D ===
 DMD64 D Compiler v2.096.1
 === DART ===
 Dart SDK version: 2.12.4 (stable) (Thu Apr 15 12:26:53 2021 +0200) on "linux_x64"
 === F# ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === GO ===
 go version go1.17.1 linux/amd64
 === GROOVY ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === HASKELL ===
 The Glorious Glasgow Haskell Compilation System, version 8.4.3
 === JAVA ===
 openjdk 11.0.2 2019-01-15
 === JAVASCRIPT ===
-node
-v14.16.1
+node v14.16.1
 === KOTLIN ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === LUA ===
 Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
 === OBJECTIVE-C ===
@@ -132,10 +131,9 @@ Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend
 === SWIFT ===
 Swift version 5.3.3 (swift-5.3.3-RELEASE)
 === TYPESCRIPT ===
-node
-v14.16.1
+node v14.16.1
 === VB.NET ===
-****************  NOT WORKING! ****************
+******** (NOT WORKING!)
 === EXTRA: FORTRAN ===
 GNU Fortran (Debian 10.2.1-6) 10.2.1 20210110
 ```
