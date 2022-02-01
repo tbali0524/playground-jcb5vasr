@@ -138,7 +138,7 @@ node v14.16.1
 GNU Fortran (Debian 10.2.1-6) 10.2.1 20210110
 ```
 
-## That's all folks
+## That's all folks!
 
 Thanks for your time!
 

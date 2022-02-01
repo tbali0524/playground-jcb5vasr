@@ -164,6 +164,6 @@ fn main() {
 }
 ```
 
-## Coming next
+## Coming next...
 
 What to do if our code is much longer then a one-liner?

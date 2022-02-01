@@ -278,6 +278,6 @@ chmod +x sol.sh
 ./sol.sh
 ```
 
-## Coming next
+## Coming next...
 
 Let's wrap up this playground by invoking all the compilers / runtimes to get their version numbers.

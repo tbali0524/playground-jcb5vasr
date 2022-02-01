@@ -6,7 +6,6 @@ Unfortunatelly, we need to escape any dollar signs `$`, double quotes `"` and ba
 
 _Note: All the examples provided would try to read the test cases as input. That would not work on `Tech.io`, therefore these coding examples are not runnable here. You can try them out in the CG IDE for the [Rubik puzzle](https://www.codingame.com/training/medium/rubik%C2%AE)._
 
-
 ## Base solution
 
 My base solution for the sample puzzle is 34 characters long in Bash.
@@ -64,6 +63,6 @@ _Note: using `python` instead of `python3` saves 1 char, but it still invokes Py
 My Ruby solution is 34 chars.
 Currently `ruby` seems to be not in the `$PATH` on CG, so we need to add full path which costs 24 chars for invoking the interpreter.
 
-## Coming next
+## Coming next...
 
 Starting from `bash` is not always what we need. How to do similar system calls from other languages?

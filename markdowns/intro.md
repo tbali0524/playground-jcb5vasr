@@ -30,12 +30,12 @@ As you will see, this playground is far from complete. For some languages I coul
 If you have suggestions for improvements, please:
 
 * send me ([TBali](https://www.codingame.com/profile/08e6e13d9f7cad047d86ec4d10c777500155033)) a __private message__ on CodinGame;
-* give a __pull request__ directly to the [github repo](https://github.com/tbali0524/playground-jcb5vasr) of this playground;
+* or give a __pull request__ directly to the [github repo](https://github.com/tbali0524/playground-jcb5vasr) of this playground;
 * or just leave a comment here on `Tech.io`.
 
 Regarding __attributions__: some of the ideas here I found in a bunch CG forum posts or chat messages.
 Many command line arguments are taken from a published code by _Westicles_ (a.k.a. _Mrs.GloriaZindlebocker_).
 
-## Coming next
+## Let's get started!
 
 How to call an interpreter from `bash` with a one-liner code?
