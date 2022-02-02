@@ -28,7 +28,7 @@ This is still our sample puzzle solution, now in C. I will exclude the embedded 
 cat > sol.cs << EOF
 // ...
 EOF
-# this worked only before CG moved to .NET Core...
+# this used to work worked only before CG moved to .NET Core...
 mcs -nologo -out:sol ./sol.cs
 mono sol
 ```
@@ -124,7 +124,7 @@ ghc sol.hs -v0
 ```sh
 # ===== to Java from Bash
 #   NOT WORKING!
- > sol.java << EOF
+cat > sol.java << EOF
 // ...
 EOF
 java /tmp/sol.java

@@ -40,7 +40,7 @@ ghc --version >&2
 echo "=== JAVA ===" >&2
 java --version | head -1 >&2
 echo "=== JAVASCRIPT ===" >&2
-printf "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
+printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== KOTLIN ===" >&2
 echo "******** (NOT WORKING!)" >&2
 # /opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
@@ -51,7 +51,7 @@ clang --version | head -1 >&2
 echo "=== OCAML ===" >&2
 /usr/local/bin/ocamlopt -v | head -1 >&2
 echo "=== PASCAL ===" >&2
-fpc -iW >&2
+printf "Free Pascal Compiler " >&2 ; fpc -iW >&2
 echo "=== PERL ===" >&2
 perl --version | head -2 | tail -1 >&2
 echo "=== PHP ===" >&2
@@ -67,7 +67,7 @@ echo "=== SCALA ===" >&2
 echo "=== SWIFT ===" >&2
 /opt/coderunner/swift/usr/bin/swift --version | head -1 >&2
 echo "=== TYPESCRIPT ===" >&2
-printf "node " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
+printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== VB.NET ===" >&2
 echo "******** (NOT WORKING!)" >&2
 #
@@ -105,7 +105,7 @@ The Glorious Glasgow Haskell Compilation System, version 8.4.3
 === JAVA ===
 openjdk 11.0.2 2019-01-15
 === JAVASCRIPT ===
-node v14.16.1
+Node.js v14.16.1
 === KOTLIN ===
 ******** (NOT WORKING!)
 === LUA ===
@@ -115,7 +115,7 @@ Debian clang version 11.0.1-2
 === OCAML ===
 The OCaml native-code compiler, version 4.12.0
 === PASCAL ===
-3.2.0
+Free Pascal Compiler 3.2.0
 === PERL ===
 This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-gnu-thread-multi
 === PHP ===
@@ -131,7 +131,7 @@ Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend
 === SWIFT ===
 Swift version 5.3.3 (swift-5.3.3-RELEASE)
 === TYPESCRIPT ===
-node v14.16.1
+Node.js v14.16.1
 === VB.NET ===
 ******** (NOT WORKING!)
 === EXTRA: FORTRAN ===
