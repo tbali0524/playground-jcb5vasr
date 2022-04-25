@@ -4,8 +4,6 @@ The [CG FAQ](https://www.codingame.com/playgrounds/40701/help-center/languages-v
 But we can also check them easily directly. By copying the script below to the CG IDE for any puzzle (with `Bash` as selected language) it will print out the version numbers to the error log. This is not particularly useful, I put it here only because the script is a nice summary of where all the compilers are located (if not in the `$PATH`) on the CG virtual machine.
 
 * CG and `Tech.io` are using different virtual machines. So below script works only in the CG IDE and not runnable here.
-* For a few languages I still don't have the proper command line to run on CG. So `C#`, `Clojure`, `F#`, `Groovy`, `Kotlin` and `VB.NET` are currently missing.
-    * _give me a PM or PR if you know it..._
 
 ## Bash script
 
@@ -16,25 +14,21 @@ bash --version  | head -1 >&2
 echo "=== C ===" >&2
 gcc --version | head -1 >&2
 echo "=== C# ===" >&2
-echo "******** (NOT WORKING!)" >&2
-# /opt/coderunner/dotnet/bin/dotnet --version | head -1 >&2
+printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
 echo "=== C++ ===" >&2
 g++ --version | head -1 >&2
 echo "=== CLOJURE ===" >&2
-echo "******** (NOT WORKING!)" >&2
-#
+java -cp /opt/coderunner/clojure/clojure.jar:/opt/coderunner/clojure/spec.alpha.jar:/opt/coderunner/clojure/core.specs.alpha.jar:/tmp/ clojure.main | head -1 >&2
 echo "=== D ===" >&2
 /opt/coderunner/dlang/dmd/linux/bin64/dmd --version | head -1 >&2
 echo "=== DART ===" >&2
 /usr/local/dart-sdk/bin/dart --version | head -1 >&2
 echo "=== F# ===" >&2
-echo "******** (NOT WORKING!)" >&2
-#
+printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
 echo "=== GO ===" >&2
 /opt/coderunner/go/bin/go version | head -1 >&2
 echo "=== GROOVY ===" >&2
-echo "******** (NOT WORKING!)" >&2
-# /opt/coderunner/groovy/bin/groovy --help >&2
+groovy --version >&2
 echo "=== HASKELL ===" >&2
 ghc --version >&2
 echo "=== JAVA ===" >&2
@@ -42,8 +36,7 @@ java --version | head -1 >&2
 echo "=== JAVASCRIPT ===" >&2
 printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== KOTLIN ===" >&2
-echo "******** (NOT WORKING!)" >&2
-# /opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
+/opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
 echo "=== LUA ===" >&2
 lua -v >&2
 echo "=== OBJECTIVE-C ===" >&2
@@ -68,74 +61,83 @@ echo "=== SWIFT ===" >&2
 /opt/coderunner/swift/usr/bin/swift --version | head -1 >&2
 echo "=== TYPESCRIPT ===" >&2
 printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
+printf "Typescript Compiler " >&2 ; /opt/coderunner/nodejs/bin/node /opt/coderunner/typescript/tsc/node_modules/typescript/bin/tsc --version | head -2 | tail -1 >&2
 echo "=== VB.NET ===" >&2
-echo "******** (NOT WORKING!)" >&2
-#
+printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
+echo "=== EXTRA: COBOL ===" >&2
+/opt/coderunner/cobol/bin/cobc --version | head -1 >&2
 echo "=== EXTRA: FORTRAN ===" >&2
-gfortran --version |head -1 >&2
+gfortran --version | head -1 >&2
+echo "=== EXTRA: R ===" >&2
+/opt/coderunner/R/bin/R --version | head -1 >&2
 ```
 
 ## Sample output (on CG)
 
-(as of _February 2022_)
+(as of _April 2022_)
 
 ```txt
 === BASH ===
-GNU bash, version 5.1.4(1)-release (x86_64-pc-linux-gnu)
+GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
 === C ===
-gcc (Debian 10.2.1-6) 10.2.1 20210110
+gcc (Debian 11.2.0-20) 11.2.0
 === C# ===
-******** (NOT WORKING!)
+.NET Core 3.1.201
 === C++ ===
-g++ (Debian 10.2.1-6) 10.2.1 20210110
+g++ (Debian 11.2.0-20) 11.2.0
 === CLOJURE ===
-******** (NOT WORKING!)
+Clojure 1.11.1
 === D ===
-DMD64 D Compiler v2.096.1
+DMD64 D Compiler v2.099.1
 === DART ===
-Dart SDK version: 2.12.4 (stable) (Thu Apr 15 12:26:53 2021 +0200) on "linux_x64"
+Dart SDK version: 2.16.2 (stable) (Tue Mar 22 13:15:13 2022 +0100) on "linux_x64"
 === F# ===
-******** (NOT WORKING!)
+.NET Core 3.1.201
 === GO ===
-go version go1.17.1 linux/amd64
+go version go1.18.1 linux/amd64
 === GROOVY ===
-******** (NOT WORKING!)
+Groovy Version: 3.0.8 JVM: 11.0.2 Vendor: Oracle Corporation OS: Linux
 === HASKELL ===
 The Glorious Glasgow Haskell Compilation System, version 8.4.3
 === JAVA ===
 openjdk 11.0.2 2019-01-15
 === JAVASCRIPT ===
-Node.js v14.16.1
+Node.js v16.14.2
 === KOTLIN ===
-******** (NOT WORKING!)
+info: kotlinc-jvm 1.5.0 (JRE 11.0.2+9)
 === LUA ===
-Lua 5.4.3  Copyright (C) 1994-2021 Lua.org, PUC-Rio
+Lua 5.4.4  Copyright (C) 1994-2022 Lua.org, PUC-Rio
 === OBJECTIVE-C ===
-Debian clang version 11.0.1-2
+Debian clang version 13.0.1-3+b2
 === OCAML ===
 The OCaml native-code compiler, version 4.12.0
 === PASCAL ===
-Free Pascal Compiler 3.2.0
+Free Pascal Compiler 3.2.2
 === PERL ===
-This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-gnu-thread-multi
+This is perl 5, version 34, subversion 0 (v5.34.0) built for x86_64-linux-gnu-thread-multi
 === PHP ===
 PHP 7.3.9 (cli) (built: Nov 25 2019 15:05:20) ( NTS )
 === PYTHON ===
-Python 3.9.9
+Python 3.9.12
 === RUBY ===
-ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 === RUST ===
-rustc 1.51.0 (2fd73fabe 2021-03-23)
+rustc 1.60.0 (7737e0b5c 2022-04-04)
 === SCALA ===
 Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
 === SWIFT ===
 Swift version 5.3.3 (swift-5.3.3-RELEASE)
 === TYPESCRIPT ===
-Node.js v14.16.1
+Node.js v16.14.2
+Typescript Compiler Version 4.6.3
 === VB.NET ===
-******** (NOT WORKING!)
+.NET Core 3.1.201
+=== EXTRA: COBOL ===
+cobc (GnuCOBOL) 3.1.2.0
 === EXTRA: FORTRAN ===
-GNU Fortran (Debian 10.2.1-6) 10.2.1 20210110
+GNU Fortran (Debian 11.2.0-20) 11.2.0
+=== EXTRA: R ===
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
 ```
 
 ## That's all folks!
