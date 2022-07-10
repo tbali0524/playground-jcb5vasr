@@ -12,7 +12,7 @@ We can also use a `bash` script to generate our source code, save it to a file, 
 
 ```sh
 # ===== to C from Bash
-# also works wothout the include line (with warnings)
+# also works without the include line (with warnings)
 cat > sol.c << EOF
 #include <stdio.h>
 int main(){int n;scanf("%d",&n);printf("%d\n",(n>1?6*n*(n-2)+8:1));}

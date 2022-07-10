@@ -144,4 +144,6 @@ R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
 
 Thanks for your time!
 
-PS: Check out my other playground on `Tech.io`: [A Babel of Languages on CodinGame](https://www.codingame.com/playgrounds/56997/a-babel-of-languages-on-codingame/intro)
+PS: Check out my other playgrounds on `Tech.io`:
+    - [A Babel of Languages on CodinGame](https://www.codingame.com/playgrounds/56997/a-babel-of-languages-on-codingame/intro)
+    - [PHP Dev Tools (for CodinGame or elsewhere)](https://www.tech.io/playgrounds/77580/php-dev-tools-for-codingame-or-elsewhere/intro)
