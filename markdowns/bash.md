@@ -16,6 +16,17 @@ My base solution for the sample puzzle is 34 characters long in Bash.
 read n;echo $((n>1?6*n*(n-2)+8:1))
 ```
 
+## Lua
+
+```sh
+# ===== to Lua from Bash
+#   length = 8 + base [53] = 61 chars
+#   calling ruby without the full path no longer works...
+lua -e"n=tonumber(io.read());print(n>1 and 6*n*(n-2)+8 or 1)"
+```
+
+My Lua solution is 34 chars. Calling the interpreter adds 12 chars. Here I did not need any escaping.
+
 ## Perl
 
 ```sh

@@ -27,7 +27,7 @@ This is still our sample puzzle solution, now in C.
 
 ```sh
 # ===== to C# from Bash
-# not working, only because I could now suppress the dotnet welcome message...
+# not working. Also I could not suppress the dotnet welcome message...
 cat > sol.cs << EOF
 using System;class Solution{static void Main(string[] args){
 int n=int.Parse(Console.ReadLine());Console.WriteLine(n>1?6*n*(n-2)+8:1);}}
@@ -37,11 +37,18 @@ cat > sol.csproj << EOF
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputPath>.</OutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 </Project>
 EOF
 export DOTNET_NOLOGO=true
-/opt/coderunner/dotnetcore/sdk/dotnet run --nologo --verbosity quiet --runtimeconfig /opt/coderunner/dotnetcore/cg/bin/Answer.runtimeconfig.json --project sol.csproj >&2
+/opt/coderunner/dotnetcore/sdk/dotnet publish sol.csproj --nologo --runtimeconfig /opt/coderunner/dotnetcore/cg/bin/Answer.runtimeconfig.json >&2
+./sol
 ```
 
 ## C++
@@ -99,9 +106,16 @@ EOF
 # ===== to F# from Bash
 #   NOT WORKING!
 cat > sol.fs << EOF
-// ...
+open System
+let N = int(Console.In.ReadLine())
+let mutable ans = 0
+if (N = 1) then
+    ans <- 1
+else
+    ans <- 6 * N * (N - 2) + 8
+printfn "%i" ans
 EOF
-# ???
+/opt/coderunner/dotnetcore/sdk/dotnet fsi sol.fs
 ```
 
 ## Go
@@ -144,11 +158,16 @@ ghc sol.hs -v0
 
 ```sh
 # ===== to Java from Bash
-#   NOT WORKING!
 cat > sol.java << EOF
-// ...
+import java.util.*;
+class Solution {
+    public static void main(String args[]) {
+        int n = (new Scanner(System.in)).nextInt();
+        System.out.println(n>1?6*n*(n-2)+8:1);
+    }
+}
 EOF
-java /tmp/sol.java
+java sol.java
 ```
 
 ## JavaScript
@@ -167,9 +186,17 @@ EOF
 # ===== to Kotlin from Bash
 #   NOT WORKING!
 cat > sol.kt << EOF
-// ...
+import java.util.*
+fun main() {
+    val n = Scanner(System.in).nextInt()
+    var ans = 1
+    if (n > 1) {
+        ans = 6 * n * (n - 2) + 8
+    }
+    println(ans)
+}
 EOF
-/opt/coderunner/kotlin/kotlinc/bin/kotlinc sol.kt -include-runtime -d sol.jar
+/opt/coderunner/kotlin/kotlinc/bin/kotlinc -include-runtime -d sol.jar sol.kt 
 java -jar sol.jar
 ```
 
@@ -179,7 +206,7 @@ java -jar sol.jar
 # ===== to Lua from Bash
 cat > sol.lua << EOF
 n = tonumber(io.read())
-if (n > 1 then
+if (n > 1) then
     a=6*n*(n-2)+8
 else
     a=1
@@ -208,7 +235,9 @@ clang `gnustep-config --objc-flags` `gnustep-config --objc-libs` -Wno-everything
 ```sh
 # ===== to OCaml from Bash
 cat > sol.ml << EOF
-(* ... *)
+let n = int_of_string (input_line stdin) in
+let ans = if (n == 1) then 1 else (6 * n * (n - 2) + 8) in
+print_endline (string_of_int ans);
 EOF
 /usr/local/bin/ocamlopt sol.ml -o sol
 ./sol
@@ -240,11 +269,22 @@ EOF
 
 ```sh
 # ===== to Scala from Bash
-#   NOT WORKING!
 cat > sol.scala << EOF
-// ...
+import scala.util._
+import scala.io.StdIn._
+
+object Solution extends App {
+    val N = readInt
+    var ans = 0
+    if (N > 1) {
+        ans = 6 * N * (N - 2) + 8;
+    } else {
+        ans = 1;
+    }
+    println(ans)
+}
 EOF
-/usr/local/share/scala/bin/scala -cp /tmp sol.scala
+/usr/local/share/scala/bin/scala -cp . sol.scala
 ```
 
 ## Swift

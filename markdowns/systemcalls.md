@@ -105,7 +105,8 @@ import std;auto p=execute(["python3", "-c\"n=int(input());print(6*n*(n-2)+8 if n
 package main
 import "os/exec"
 func main() {
-    exec.Command("python3", "-c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"")
+    cmd := exec.Command("python3", "-c\"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)\"")
+    cmd.Run()
 }
 ```
 
