@@ -39,6 +39,12 @@ system('python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"');
 system('python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"');
 ```
 
+A slightly shorter alternative is to use the backtick operator:
+
+```sh
+echo`python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"`;
+```
+
 ## Python
 
 Here the example is for calling `ruby`:

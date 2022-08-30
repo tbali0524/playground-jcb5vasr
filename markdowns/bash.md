@@ -48,12 +48,6 @@ php -r"\$n=fgets(STDIN);echo\$n>1?6*\$n*(\$n-2)+8:1;"
 
 My PHP solution is 41 chars. Calling the interpreter adds 8 chars, escaping adds 4.
 
-A slightly shorter alternative is to use the backtick operator:
-
-```sh
-echo`python3 -c"n=int(input());print(6*n*(n-2)+8 if n>1 else 1)"`;
-```
-
 ## Python
 
 ```sh
