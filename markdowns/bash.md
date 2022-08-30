@@ -21,7 +21,6 @@ read n;echo $((n>1?6*n*(n-2)+8:1))
 ```sh
 # ===== to Lua from Bash
 #   length = 8 + base [53] = 61 chars
-#   calling ruby without the full path no longer works...
 lua -e"n=tonumber(io.read());print(n>1 and 6*n*(n-2)+8 or 1)"
 ```
 
