@@ -144,15 +144,15 @@ groovy /tmp/sol.groovy
 ```sh
 # ===== to Haskell from Bash
 cat > sol.hs << EOF
-import System.IO
 main=do
-  inp <- getLine
-  let n = read inp
-  print (if (n>1) then 6*n*(n-2)+8 else 1)
+  n <- readLn
+  print $ if n>1 then 6*n*(n-2)+8 else 1
 EOF
 ghc sol.hs -v0
 ./sol
 ```
+
+Note: `/usr/local/bin/runghc` can be also used instead of `ghc` for compiling and running in a single step.
 
 ## Java
 
@@ -178,6 +178,17 @@ cat > sol.js << EOF
 const n=parseInt(readline());console.log(n>1?6*n*(n-2)+8:1)
 EOF
 /opt/coderunner/nodejs/bin/node -r /codemachine/lib/javascript/internal/polyfill.js /tmp/sol.js
+```
+
+As you can see from the command line arguments of `node`, CodinGame is using a polyfill to implement `readline()` for your JavaScript code.
+
+You can check the contents of the polyfills from `Bash` with:
+
+```sh
+echo "=== polyfill.js" >&2 
+cat /codemachine/lib/javascript/internal/polyfill.js >&2 
+echo "=== readline.js" >&2 
+cat /codemachine/lib/javascript/internal/readline.js >&2
 ```
 
 ## Kotlin

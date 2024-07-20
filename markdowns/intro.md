@@ -33,8 +33,11 @@ If you have suggestions for improvements, please:
 * or give a __pull request__ directly to the [github repo](https://github.com/tbali0524/playground-jcb5vasr) of this playground;
 * or just leave a comment here on `Tech.io`.
 
-Regarding __attributions__: some of the ideas here I found in a bunch CG forum posts or chat messages.
-Many command line arguments are taken from a published code by _Westicles_ (a.k.a. _Mrs.GloriaZindlebocker_).
+Regarding __attributions__:
+
+* Some of the ideas here I found in a bunch CG forum posts or chat messages.
+* Many command line arguments were taken from a published code by _Westicles_ (a.k.a. _Mrs.GloriaZindlebocker_).
+* _abt8601_ contributed many additions and corrections.
 
 ## Let's get started!
 

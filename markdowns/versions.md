@@ -14,21 +14,23 @@ bash --version  | head -1 >&2
 echo "=== C ===" >&2
 gcc --version | head -1 >&2
 echo "=== C# ===" >&2
-printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
+printf ".NET " >&2 ; /opt/coderunner/dotnet/sdk/dotnet --version | head -1 >&2
 echo "=== C++ ===" >&2
 g++ --version | head -1 >&2
 echo "=== CLOJURE ===" >&2
-java -cp /opt/coderunner/clojure/clojure.jar:/opt/coderunner/clojure/spec.alpha.jar:/opt/coderunner/clojure/core.specs.alpha.jar:/tmp/ clojure.main | head -1 >&2
+# no longer working
+# java -cp /opt/coderunner/clojure/clojure.jar:/opt/coderunner/clojure/spec.alpha.jar:/opt/coderunner/clojure/core.specs.alpha.jar:/tmp/ clojure.main | head -1 >&2
 echo "=== D ===" >&2
 /opt/coderunner/dlang/dmd/linux/bin64/dmd --version | head -1 >&2
 echo "=== DART ===" >&2
 /usr/local/dart-sdk/bin/dart --version | head -1 >&2
 echo "=== F# ===" >&2
-printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
+printf ".NET " >&2 ; /opt/coderunner/dotnet/sdk/dotnet --version | head -1 >&2
 echo "=== GO ===" >&2
 /opt/coderunner/go/bin/go version | head -1 >&2
 echo "=== GROOVY ===" >&2
-groovy --version >&2
+# no longer working
+# groovy --version >&2
 echo "=== HASKELL ===" >&2
 ghc --version >&2
 echo "=== JAVA ===" >&2
@@ -36,7 +38,8 @@ java --version | head -1 >&2
 echo "=== JAVASCRIPT ===" >&2
 printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 echo "=== KOTLIN ===" >&2
-/opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
+# no longer working
+# /opt/coderunner/kotlin/kotlinc/bin/kotlinc -version >&2
 echo "=== LUA ===" >&2
 lua -v >&2
 echo "=== OBJECTIVE-C ===" >&2
@@ -63,7 +66,7 @@ echo "=== TYPESCRIPT ===" >&2
 printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 printf "Typescript Compiler " >&2 ; /opt/coderunner/nodejs/bin/node /opt/coderunner/typescript/tsc/node_modules/typescript/bin/tsc --version | head -2 | tail -1 >&2
 echo "=== VB.NET ===" >&2
-printf ".NET Core " >&2 ; /opt/coderunner/dotnetcore/sdk/dotnet --version | head -1 >&2
+printf ".NET " >&2 ; /opt/coderunner/dotnet/sdk/dotnet --version | head -1 >&2
 echo "=== EXTRA: COBOL ===" >&2
 /opt/coderunner/cobol/bin/cobc --version | head -1 >&2
 echo "=== EXTRA: FORTRAN ===" >&2
@@ -74,7 +77,7 @@ echo "=== EXTRA: R ===" >&2
 
 ## Sample output (on CG)
 
-(as of _April 2022_)
+(as of _July 2024_)
 
 ```txt
 === BASH ===
@@ -82,7 +85,7 @@ GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
 === C ===
 gcc (Debian 11.2.0-20) 11.2.0
 === C# ===
-.NET Core 3.1.201
+.NET 6.0.401
 === C++ ===
 g++ (Debian 11.2.0-20) 11.2.0
 === CLOJURE ===
@@ -92,7 +95,7 @@ DMD64 D Compiler v2.099.1
 === DART ===
 Dart SDK version: 2.16.2 (stable) (Tue Mar 22 13:15:13 2022 +0100) on "linux_x64"
 === F# ===
-.NET Core 3.1.201
+.NET 6.0.401
 === GO ===
 go version go1.18.1 linux/amd64
 === GROOVY ===
@@ -100,7 +103,7 @@ Groovy Version: 3.0.8 JVM: 11.0.2 Vendor: Oracle Corporation OS: Linux
 === HASKELL ===
 The Glorious Glasgow Haskell Compilation System, version 8.4.3
 === JAVA ===
-openjdk 11.0.2 2019-01-15
+java 17.0.8 2023-07-18 LTS
 === JAVASCRIPT ===
 Node.js v16.14.2
 === KOTLIN ===
@@ -118,11 +121,11 @@ This is perl 5, version 34, subversion 0 (v5.34.0) built for x86_64-linux-gnu-th
 === PHP ===
 PHP 7.3.9 (cli) (built: Nov 25 2019 15:05:20) ( NTS )
 === PYTHON ===
-Python 3.9.12
+Python 3.11.5
 === RUBY ===
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 === RUST ===
-rustc 1.60.0 (7737e0b5c 2022-04-04)
+rustc 1.70.0 (90c541806 2023-05-31)
 === SCALA ===
 Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
 === SWIFT ===
@@ -131,7 +134,7 @@ Swift version 5.3.3 (swift-5.3.3-RELEASE)
 Node.js v16.14.2
 Typescript Compiler Version 4.6.3
 === VB.NET ===
-.NET Core 3.1.201
+.NET 6.0.401
 === EXTRA: COBOL ===
 cobc (GnuCOBOL) 3.1.2.0
 === EXTRA: FORTRAN ===

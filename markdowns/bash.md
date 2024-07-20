@@ -2,7 +2,7 @@
 
 We can call different interpreters with a one-liner solution passed as a command-line parameter directly from `bash`.
 
-Unfortunatelly, we need to escape any dollar signs `$`, double quotes `"` and backslashes `\` in our source code (by adding a backslash `\` before them). This hurts especially in `Perl` and `PHP`, where all variable names start with a `$` sign... At least, in some languages single quotes `'` can be used instead of double quotes `"` (although in `PHP` with slightly different meaning).
+Unfortunatelly, we need to escape any dollar signs `$`, double quotes `"` and backslashes `\` in our source code (by adding a backslash `\` before them). This would hurt especially in `Perl` and `PHP`, where all variable names start with a `$` sign. Using single quote `'` instead of double `"` in the bash invocation is better in these cases.
 
 _Note: All the examples provided would try to read the test cases as input. That would not work on `Tech.io`, therefore these coding examples are not runnable here. You can try them out in the CG IDE for the [Rubik puzzle](https://www.codingame.com/training/medium/rubik%C2%AE)._
 
@@ -24,29 +24,29 @@ read n;echo $((n>1?6*n*(n-2)+8:1))
 lua -e"n=tonumber(io.read());print(n>1 and 6*n*(n-2)+8 or 1)"
 ```
 
-My Lua solution is 34 chars. Calling the interpreter adds 12 chars. Here I did not need any escaping.
+My Lua solution is 53 chars. Calling the interpreter adds 12 chars.
 
 ## Perl
 
 ```sh
 # ===== to Perl from Bash
-#   length = 9 + base [38] + #vars [4] = 51 chars
-#   $ in variable names must be escaped...
-perl -e"my\$n=<STDIN>;print\$n>1?6*\$n*(\$n-2)+8:1"
+#   length = 9 + base [38] = 47 chars
+perl -e'my$n=<STDIN>;print$n>1?6*$n*($n-2)+8:1'
 ```
 
-My Perl solution is 38 chars. Calling the interpreter adds 9 chars, escaping adds another 4 extra chars in this tiny example.
+My Perl solution is 38 chars. Calling the interpreter adds 9 chars.
 
 ## PHP
 
 ```sh
 # ===== to PHP from Bash
-#   length = 8 + base [41] + #vars [4] = 53 chars
-#   $ in variable names must be escaped...
+#   length = 8 + base [41] = 49 chars
+php -r'$n=fgets(STDIN);echo$n>1?6*$n*($n-2)+8:1;'
+# if we were using " then escaping would be needed for the $
 php -r"\$n=fgets(STDIN);echo\$n>1?6*\$n*(\$n-2)+8:1;"
 ```
 
-My PHP solution is 41 chars. Calling the interpreter adds 8 chars, escaping adds 4.
+My PHP solution is 41 chars. Calling the interpreter adds 8 chars.
 
 ## Python
 
