@@ -73,6 +73,16 @@ _Note: using `python` instead of `python3` saves 1 char, but it still invokes Py
 My Ruby solution is 34 chars.
 Currently `ruby` seems to be not in the `$PATH` on CG, so we need to add full path which costs 24 chars for invoking the interpreter.
 
+## +1 bonus: AWK
+
+```sh
+# ===== to AWK from Bash
+#   length = 6 + base [30] = 36 chars
+awk '{print $1==1?1:6*$1*($1-2)+8}'
+```
+
+This solution is 30 chars. Calling the interpreter adds 6 chars.
+
 ## Coming next...
 
 Starting from `bash` is not always what we need. How to do similar system calls from other languages?
