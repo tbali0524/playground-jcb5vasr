@@ -67,6 +67,8 @@ printf "Node.js " >&2 ; /opt/coderunner/nodejs/bin/node --version >&2
 printf "Typescript Compiler " >&2 ; /opt/coderunner/nodejs/bin/node /opt/coderunner/typescript/tsc/node_modules/typescript/bin/tsc --version | head -2 | tail -1 >&2
 echo "=== VB.NET ===" >&2
 printf ".NET " >&2 ; /opt/coderunner/dotnet/sdk/dotnet --version | head -1 >&2
+echo "=== EXTRA: AWK ===" >&2
+awk -W version >&2
 echo "=== EXTRA: COBOL ===" >&2
 /opt/coderunner/cobol/bin/cobc --version | head -1 >&2
 echo "=== EXTRA: FORTRAN ===" >&2
@@ -135,6 +137,12 @@ Node.js v16.14.2
 Typescript Compiler Version 4.6.3
 === VB.NET ===
 .NET 6.0.401
+=== EXTRA: AWK ===
+mawk 1.3.3 Nov 1996, Copyright (C) Michael D. Brennan
+
+compiled limits:
+max NF             32767
+sprintf buffer      2040
 === EXTRA: COBOL ===
 cobc (GnuCOBOL) 3.1.2.0
 === EXTRA: FORTRAN ===
